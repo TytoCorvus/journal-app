@@ -1,0 +1,21 @@
+<div class="container builder">
+    <div class="row">
+        <form class="col-2">
+            <select name="ItemCategory" (change)="categoryChanged($event)" formControlName="selectedItemCategory"
+                style="padding-left: 10px">
+                <option value="" disabled>Entry type</option>
+                <option *ngFor="let itemCat of itemCategories">
+                    {{ itemCat }}
+                </option>
+            </select>
+        </form>
+    </div>
+    <ng-container [ngSwitch]="form.value.selectedItemCategory" class="row">
+        <simple-entry-builder *ngSwitchCase="'Simple'" (completeEntry)="simpleSubmitted($event)">
+        </simple-entry-builder>
+        <div *ngSwitchCase="'Goal'">A form builder for goals</div>
+        <div *ngSwitchCase="'Goal Update'">A builder for supplying a goal-specific update</div>
+        <div *ngSwitchCase="'Project'">A yet more complicated builder for Projects</div>
+        <div *ngSwitchDefault>Nothing selected</div>
+    </ng-container>
+</div>

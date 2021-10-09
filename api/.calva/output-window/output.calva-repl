@@ -1,0 +1,57 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+c o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; nREPL Connection was closed
+; Starting Jack-in Terminal: lein update-in :dependencies conj '[nrepl,"0.8.3"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.26.0"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless
+; Hooking up nREPL sessions...
+; Connected session: clj
+; TIPS: 
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+clj꞉api.core꞉> 
+; Jack-in done.
+clj꞉api.core꞉> 
+; Syntax error reading source at (REPL:43:1).
+; EOF while reading, starting at line 41
+clj꞉api.core꞉> 
+nil
+clj꞉api.core꞉> 
+nil
+clj꞉api.core꞉> 
+; Evaluating file: core.clj
+nil
+clj꞉api.core꞉> 
+nil
+clj꞉api.core꞉> 
+nil
+clj꞉api.core꞉> 
+{:status 200, :headers {"Content-Type" "text/plain"}, :body "Hello, World!"}
+clj꞉api.core꞉> 
+{:status 200
+ :headers {"Content-Type" "text/html; charset=utf-8"}
+ :body
+ "{:uri \"/example\", :request-method :get, :form-params {}, :params {}, :query-params {}, :route-params {}, :compojure/route [:get \"/example\"]}"}
+clj꞉api.core꞉> 
+; Evaluating file: core.clj
+nil
+clj꞉api.core꞉> 
+{:params {}
+ :route-params {}
+ :headers {}
+ :form-params {}
+ :compojure/route [:get "/example"]
+ :status 200
+ :query-params {}
+ :uri "/example"
+ :body ""
+ :request-method :get}
+clj꞉api.core꞉> 
+; nREPL Connection was closed

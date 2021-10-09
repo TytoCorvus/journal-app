@@ -1,0 +1,47 @@
+<form [formGroup]="form" class="container">
+    <div class="row">
+        <div class="col">
+            <label>Type:</label>
+            <select name="EntryType" formControlName="entryType">
+                <option value="" disabled>Select an entry type</option>
+                <option *ngFor="let entry of EntryTypes" [ngValue]="entry">
+                    {{ entry.name }}
+                </option>
+            </select>
+        </div>
+        <div class="col">
+            <label>Category:</label>
+            <select name="Category" formControlName="category">
+                <option value="" disabled>Select a category</option>
+                <option *ngFor="let cat of Categories" [ngValue]="cat">
+                    {{ cat.name }}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label>Association:</label>
+            <select name="Association" formControlName="association">
+                <option [ngValue]="null" selected>Select an association</option>
+                <option *ngFor="let assoc of Associations" [ngValue]="assoc">
+                    {{ assoc.name }}
+                </option>
+            </select>
+        </div>
+        <div class="col">
+            <label>Project:</label>
+            <select name="Project" formControlName="projectId">
+                <option [ngValue]="null" selected>Choose a project, or none</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:4px">
+        <label>Summary: </label>
+        <textarea formControlName="summary" placeholder="Describe your entry here"></textarea>
+    </div>
+    <div class="row">
+        <div class="btn btn-primary" (click)="submit()">Add</div>
+    </div>
+</form>

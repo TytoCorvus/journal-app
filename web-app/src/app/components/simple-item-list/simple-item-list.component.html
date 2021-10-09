@@ -1,0 +1,25 @@
+<div class="container" style="width: 90%">
+    <div>
+        <h5 class="bold">Simple Entries:</h5>
+    </div>
+    <ul>
+        <li *ngFor="let item of itemList; index as i;" style="padding: 5px">
+            <span class="d-flex justify-content-md-between">
+                <div class="text-wrap">
+                    Summary: {{item.summary}}
+                </div>
+                <div class="float-right entry-type">
+                    <!-- Add all of the tags in the container here-->
+                    {{item.entryType.name}}
+                </div>
+                <div class="float-right btn-sm remove-btn justify-content-center" (click)="removeAtIndex(i)">
+                    X
+                </div>
+            </span>
+        </li>
+    </ul>
+    <div>
+        <h5 class="bold">Goal Updates:</h5>
+    </div>
+    <item-builder (simpleCreated)="pushSimple($event)"></item-builder>
+</div>
