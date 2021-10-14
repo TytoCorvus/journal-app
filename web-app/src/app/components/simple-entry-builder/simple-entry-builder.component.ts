@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms'
+import { FormControl, FormGroup } from '@angular/forms';
 import { ISimpleEntry, EntryTypes } from 'src/app/model/simple-entry';
 import { Categories } from 'src/app/model/category';
 import { Associations } from 'src/app/model/association';

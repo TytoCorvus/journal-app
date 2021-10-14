@@ -1,1 +1,28 @@
-<p>goal-builder works!</p>
+<form [formGroup]="form" class="container">
+    <div class="row">
+        <div class="col">
+            <label>Category:</label>
+            <select name="Category" formControlName="category">
+                <option value="" disabled>Select a category</option>
+                <option *ngFor="let cat of Categories" [ngValue]="cat">
+                    {{ cat.name }}
+                </option>
+            </select>
+        </div>
+        <div class="col">
+            <label>End Date: </label>
+            <input matInput [matDatepicker]="endDatePicker">
+            <mat-datepicker-toggle [for]="endDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #endDatePicker></mat-datepicker>
+        </div>
+        
+    </div>
+
+    <div class="row" style="margin-bottom:4px">
+        <label>Description: </label>
+        <textarea formControlName="description" placeholder="Describe your entry here"></textarea>
+    </div>
+    <div class="row">
+        <div class="btn btn-primary" (click)="submit()">Add</div>
+    </div>
+</form>

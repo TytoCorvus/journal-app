@@ -13,7 +13,7 @@
     <ng-container [ngSwitch]="form.value.selectedItemCategory" class="row">
         <simple-entry-builder *ngSwitchCase="'Simple'" (completeEntry)="simpleSubmitted($event)">
         </simple-entry-builder>
-        <div *ngSwitchCase="'Goal'">A form builder for goals</div>
+        <goal-builder  *ngSwitchCase="'Goal'"></goal-builder>
         <div *ngSwitchCase="'Goal Update'">A builder for supplying a goal-specific update</div>
         <div *ngSwitchCase="'Project'">A yet more complicated builder for Projects</div>
         <div *ngSwitchDefault>Nothing selected</div>

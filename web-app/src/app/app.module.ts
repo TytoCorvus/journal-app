@@ -9,6 +9,9 @@ import { ItemBuilderComponent } from './components/item-builder/item-builder.com
 import { SimpleEntryBuilderComponent } from './components/simple-entry-builder/simple-entry-builder.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GoalBuilderComponent } from './components/goal-builder/goal-builder.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { GoalBuilderComponent } from './components/goal-builder/goal-builder.com
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
