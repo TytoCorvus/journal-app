@@ -17,6 +17,23 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col">
+            <label>Association:</label>
+            <select name="Association" formControlName="association">
+                <option value="" disabled>Select an association</option>
+                <option *ngFor="let assoc of Associations" [ngValue]="assoc">
+                    {{ assoc.name }}
+                </option>
+            </select>
+        </div>
+        <div class="col">
+            <label>Tag: </label>
+            <textarea formControlName="tag" placeholder="Short identifier"></textarea>
+        </div>
+    </div>
+
+
     <div class="row" style="margin-bottom:4px">
         <label>Description: </label>
         <textarea formControlName="description" placeholder="Describe your entry here"></textarea>

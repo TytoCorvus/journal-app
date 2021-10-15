@@ -12,9 +12,8 @@ $safety-orange-blaze-orange: rgba(249, 105, 0, 1);
 $princeton-orange: rgba(241, 127, 41, 1);
 
 .palette-background {
-    background-color: $safety-orange-blaze-orange;
-    color: $near-black;
-    border-radius: 10px;
+    height: 1vh;
+    width: 100%;
 }
 
 header {
@@ -23,3 +22,9 @@ header {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+li {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}

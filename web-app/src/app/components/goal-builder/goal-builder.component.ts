@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Categories } from 'src/app/model/category';
+import { IGoal } from 'src/app/model/goal';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'goal-builder',
@@ -8,8 +10,9 @@ import { Categories } from 'src/app/model/category';
   styleUrls: ['./goal-builder.component.scss']
 })
 export class GoalBuilderComponent implements OnInit {
-  
-  @Input() startDate : Date = new Date();
+
+  @Input() startDate: Date = new Date();
+  @Output() completeEntry = new EventEmitter<IGoal>();
 
   Categories = Object.values(Categories);
 
@@ -33,8 +36,15 @@ export class GoalBuilderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit(){
-
+  submit() {
+    if (this.form.valid) {
+      this.completeEntry.emit({
+        ...this.form.value,
+        id: uuidv4()
+      })
+    } else {
+      console.log(`The Goal form provided was invalid`)
+    }
   }
 
 }

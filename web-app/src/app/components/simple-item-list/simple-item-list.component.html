@@ -1,25 +1,60 @@
 <div class="container" style="width: 90%">
-    <div>
-        <h5 class="bold">Simple Entries:</h5>
+    <div class="row">
+        <div class="col-9">
+            <div>
+                <h3 class="bold">Simple Entries:</h3>
+            </div>
+            <ul>
+                <li *ngFor="let item of itemList; index as i;" class="list-entry simple-entry">
+                    <span class="d-flex justify-content-md-between">
+                        <div class="text-wrap">
+                            Summary: {{item.summary}}
+                        </div>
+                        <div class="float-right entry-type">
+                            <!-- Add all of the tags in the container here-->
+                            {{item.entryType.name}}
+                        </div>
+                        <div class="float-right btn-sm remove-btn justify-content-center"
+                            (click)="removeAtIndex('simple',i)">
+                            X
+                        </div>
+                    </span>
+                </li>
+            </ul>
+            <div>
+                <h3 class="bold">Goals:</h3>
+            </div>
+            <ul>
+                <li *ngFor="let goal of goalList; index as i;" class="list-entry goal-entry">
+                    <span class="d-flex justify-content-md-between">
+                        {{goal.description}}
+                        <div *ngIf="goal.endDate" class="float-right">{{goal.endDate.toLocaleString()}}</div>
+                        <div class="float-right btn-sm remove-btn justify-content-center"
+                            (click)="removeAtIndex('goal',i)">
+                            X
+                        </div>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="col-3">
+            <div>
+                <h3 class="bold">Projects:</h3>
+            </div>
+            <ul>
+                <li *ngFor="let item of projectList; index as i;" class="list-entry project-entry">
+                    <span class="d-flex justify-content-md-between">
+                        <div class="text-wrap">
+                            Summary: {{item.description}}
+                        </div>
+                        <div class="float-right entry-type">
+                            {{item.tag}}
+                        </div>
+                    </span>
+                </li>
+            </ul>
+        </div>
     </div>
-    <ul>
-        <li *ngFor="let item of itemList; index as i;" style="padding: 5px">
-            <span class="d-flex justify-content-md-between">
-                <div class="text-wrap">
-                    Summary: {{item.summary}}
-                </div>
-                <div class="float-right entry-type">
-                    <!-- Add all of the tags in the container here-->
-                    {{item.entryType.name}}
-                </div>
-                <div class="float-right btn-sm remove-btn justify-content-center" (click)="removeAtIndex(i)">
-                    X
-                </div>
-            </span>
-        </li>
-    </ul>
-    <div>
-        <h5 class="bold">Goal Updates:</h5>
-    </div>
-    <item-builder (simpleCreated)="pushSimple($event)"></item-builder>
+    <item-builder (simpleCreated)="pushSimple($event)" (goalCreated)="pushGoal($event)"
+        (projectCreated)="pushProject($event)"></item-builder>
 </div>

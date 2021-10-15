@@ -37,4 +37,5 @@ export enum GoalState {
 export interface IProject extends IGoal {
     association: IAssociation;
     entries: Array<ISimpleEntry>;
+    tag: string;
 }

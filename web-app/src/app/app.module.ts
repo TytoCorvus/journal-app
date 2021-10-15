@@ -12,6 +12,7 @@ import { GoalBuilderComponent } from './components/goal-builder/goal-builder.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ProjectBuilderComponent } from './components/project-builder/project-builder.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     SimpleItemListComponent,
     ItemBuilderComponent,
     SimpleEntryBuilderComponent,
-    GoalBuilderComponent
+    GoalBuilderComponent,
+    ProjectBuilderComponent
   ],
   imports: [
     BrowserModule,

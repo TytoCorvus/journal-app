@@ -5,8 +5,28 @@
 }
 
 .remove-btn {
+    cursor: pointer;
     color: red;
     box-shadow: 3px lightslategray;
     border-radius: 4px;
     border: 3px solid black;
+}
+
+.list-entry {
+    border-radius: 5px;
+    box-shadow: 3px 2px 2px lightslategray;
+    padding: 10px;
+    margin-bottom: 6px;
+}
+
+.list-entry.simple-entry {
+    background-color: lightskyblue;
+}
+
+.list-entry.goal-entry {
+    background-color: lightyellow;
+}
+
+.list-entry.project-entry {
+    background-color: lightcoral;
 }

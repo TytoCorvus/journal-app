@@ -32,4 +32,12 @@ export class ItemBuilderComponent {
     this.simpleCreated.emit($event);
   }
 
+  goalSubmitted($event: IGoal) {
+    this.goalCreated.emit($event);
+  }
+
+  projectSubmitted($event: IProject) {
+    this.projectCreated.emit($event);
+  }
+
 }
