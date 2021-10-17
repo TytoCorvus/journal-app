@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ProjectBuilderComponent } from './components/project-builder/project-builder.component';
+import { ModalBaseComponent } from './components/modal-base/modal-base.component';
+import { ProjectDetailedViewComponent } from './components/project-detailed-view/project-detailed-view.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ProjectBuilderComponent } from './components/project-builder/project-bu
     ItemBuilderComponent,
     SimpleEntryBuilderComponent,
     GoalBuilderComponent,
-    ProjectBuilderComponent
+    ProjectBuilderComponent,
+    ModalBaseComponent,
+    ProjectDetailedViewComponent
   ],
   imports: [
     BrowserModule,
