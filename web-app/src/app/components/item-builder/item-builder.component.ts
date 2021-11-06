@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component,  Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { IGoal, IProject } from 'src/app/model/goal';
 import { ISimpleEntry } from 'src/app/model/simple-entry';
@@ -9,7 +9,7 @@ import { ISimpleEntry } from 'src/app/model/simple-entry';
   styleUrls: ['./item-builder.component.scss']
 })
 export class ItemBuilderComponent {
-
+  @Input() projectList: Array<IProject> = new Array<IProject>();
   @Output() simpleCreated = new EventEmitter<ISimpleEntry>()
   @Output() goalCreated = new EventEmitter<IGoal>()
   @Output() projectCreated = new EventEmitter<IProject>()

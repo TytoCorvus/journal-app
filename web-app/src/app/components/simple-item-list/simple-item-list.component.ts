@@ -17,6 +17,8 @@ export class SimpleItemListComponent implements OnInit {
   goalList: Array<IGoal> = [];
   projectList: Array<IProject> = [];
 
+  Categories = Categories;
+
   constructor() {
 
     this.itemList = [
@@ -24,7 +26,8 @@ export class SimpleItemListComponent implements OnInit {
         summary: "I made a Journal app!",
         entryType: EntryTypes.TASK,
         category: Categories.PERSONAL,
-        date: new Date()
+        date: new Date(),
+        association: Associations.PERSONAL
       },
       {
         summary: "Worked on new features",

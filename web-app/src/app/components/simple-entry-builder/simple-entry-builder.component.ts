@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ISimpleEntry, EntryTypes } from 'src/app/model/simple-entry';
 import { Categories } from 'src/app/model/category';
 import { Associations } from 'src/app/model/association';
+import { IProject } from 'src/app/model/goal';
 
 @Component({
   selector: 'simple-entry-builder',
@@ -11,7 +12,10 @@ import { Associations } from 'src/app/model/association';
 })
 export class SimpleEntryBuilderComponent {
   @Input() eventDate: Date = new Date();
+  @Input() projectList: Array<IProject> = new Array<IProject>();
   @Output() completeEntry = new EventEmitter<ISimpleEntry>();
+
+  projectEntry: boolean = false;
 
   EntryTypes = Object.values(EntryTypes);
   Categories = Object.values(Categories);
@@ -34,6 +38,12 @@ export class SimpleEntryBuilderComponent {
   });
 
   constructor() { }
+
+  isProjectChanged($event : any) {
+    console.log('It changed?');
+    console.log(JSON.stringify($event));
+    console.log(this.projectEntry);
+  } 
 
   submit() {
     if (this.form.valid) {

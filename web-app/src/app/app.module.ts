@@ -15,6 +15,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ProjectBuilderComponent } from './components/project-builder/project-builder.component';
 import { ModalBaseComponent } from './components/modal-base/modal-base.component';
 import { ProjectDetailedViewComponent } from './components/project-detailed-view/project-detailed-view.component';
+import { SimpleEntryComponent } from './components/simple-ui-components/simple-entry/simple-entry.component';
+import { MainContentComponent } from './components/main-content/main-content.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ProjectDetailedViewComponent } from './components/project-detailed-view
     GoalBuilderComponent,
     ProjectBuilderComponent,
     ModalBaseComponent,
-    ProjectDetailedViewComponent
+    ProjectDetailedViewComponent,
+    SimpleEntryComponent,
+    MainContentComponent
   ],
   imports: [
     BrowserModule,

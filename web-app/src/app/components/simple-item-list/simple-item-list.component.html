@@ -6,19 +6,7 @@
             </div>
             <ul>
                 <li *ngFor="let item of itemList; index as i;" class="list-entry simple-entry">
-                    <span class="d-flex justify-content-md-between">
-                        <div class="text-wrap">
-                            Summary: {{item.summary}}
-                        </div>
-                        <div class="float-right entry-type">
-                            <!-- Add all of the tags in the container here-->
-                            {{item.entryType.name}}
-                        </div>
-                        <div class="float-right btn-sm remove-btn justify-content-center"
-                            (click)="removeAtIndex('simple',i)">
-                            X
-                        </div>
-                    </span>
+                    <simple-entry [simpleEntry]="item"></simple-entry>
                 </li>
             </ul>
             <div>
@@ -55,6 +43,9 @@
             </ul>
         </div>
     </div>
-    <item-builder (simpleCreated)="pushSimple($event)" (goalCreated)="pushGoal($event)"
+    <item-builder 
+        [projectList]="projectList"
+        (simpleCreated)="pushSimple($event)" 
+        (goalCreated)="pushGoal($event)"
         (projectCreated)="pushProject($event)"></item-builder>
 </div>

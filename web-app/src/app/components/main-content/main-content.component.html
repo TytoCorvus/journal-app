@@ -1,0 +1,13 @@
+<div class="col">
+    <div class="d-flex flex-row">
+        Date goes here.
+        <div class="float-right">
+            <input matInput [matDatepicker]="datePicker" (onChange)="dateChange($event)">
+            <mat-datepicker-toggle [for]="datePicker"></mat-datepicker-toggle>
+            <mat-datepicker #datePicker></mat-datepicker>
+        </div>
+    </div>  
+    <div class="row">
+        <simple-item-list></simple-item-list>
+    </div>  
+</div>
