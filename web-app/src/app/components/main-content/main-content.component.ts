@@ -15,8 +15,20 @@ export class MainContentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  dateChange($event: any){
+  dateChange($event: any) {
     console.log(`Date changed: ${JSON.stringify($event)}`)
   }
 
+  dateAsString(): string {
+    const dateDiff = this.selectedDate.getDate() - (new Date()).getDate();
+
+    switch (dateDiff) {
+      case 0:
+        return `Today`;
+      case -1:
+        return `Yesterday`;
+      default:
+        return '';
+    }
+  }
 }

@@ -1,13 +1,16 @@
 <div class="col">
-    <div class="d-flex flex-row">
-        Date goes here.
-        <div class="float-right">
-            <input matInput [matDatepicker]="datePicker" (onChange)="dateChange($event)">
-            <mat-datepicker-toggle [for]="datePicker"></mat-datepicker-toggle>
-            <mat-datepicker #datePicker></mat-datepicker>
+    <div class="container" style="width: 80%;">
+        <div class="d-flex flex-row">
+            <h3 class="col-9 journal-date-text text-justify">
+                {{ dateAsString() ? dateAsString() + ' - ' : '' }}{{selectedDate | date }}
+            </h3>
+            <div class="col-3">
+                <mat-datepicker-toggle [for]="datePicker"></mat-datepicker-toggle>
+                <mat-datepicker #datePicker></mat-datepicker>
+            </div>
         </div>
-    </div>  
+    </div>
     <div class="row">
         <simple-item-list></simple-item-list>
-    </div>  
+    </div>
 </div>
