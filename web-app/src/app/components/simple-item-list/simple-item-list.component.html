@@ -5,8 +5,9 @@
                 <h3 class="bold">Simple Entries:</h3>
             </div>
             <ul>
-                <li *ngFor="let item of itemList; index as i;" class="list-entry simple-entry">
+                <li *ngFor="let item of itemList; index as i;" class="list-entry simple-entry hover-parent">
                     <simple-entry [simpleEntry]="item"></simple-entry>
+                    <button class="hidden btn"><img src="assets/images/trash.svg" style="width: 100%;"/></button>
                 </li>
             </ul>
             <div>
